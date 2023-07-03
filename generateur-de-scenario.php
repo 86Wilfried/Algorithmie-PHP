@@ -17,9 +17,9 @@ $Ou = ['à Tokyo ','à New-york ','à Marseille ','à Paris ','en banlieu ','en 
 
 // FAIRE
 do {
-// Je quantifier les éléments du tableau avec la fonction 'count()'
+// Je quantifie les éléments du tableau avec la fonction 'count()'
     $nbr_Qui = count($Qui) -1;
-//Je prendre un élément au hasard de le tableau avec la fonction 'rand()'
+//Je prends un élément au hasard de le tableau avec la fonction 'rand()'
     $i_Qui = rand(0, $nbr_Qui);
 //Je duplique au autre tableau
     $nbr_Quoi = count($Quoi) -1;
