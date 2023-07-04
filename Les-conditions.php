@@ -11,54 +11,55 @@ const EOL = "\n\r";
 // (optionnel) : une fois cela fait, vous pouvez, si vous le souhaitez, ajouter des message supplémentaire en fonction de l'âge de la personne
 // par exemple si son age est inférieur à 10 ans, ou supérieur à 100...
 
-// ENTIER annee = DEMANDER "Quel est ton annee de naissance ?"
+// ENTIER annee = DEMANDER à l'utilisateur
 $annee = readline ('Quel est ton année de naissance ?');
+//TANT QUE la variable est inf à 1900 OU sup à 2023 ALORS
 while ($annee < 1900 || $annee > 2023){
+    // AFFICHE
     echo "Veuillez saisir une année entre 1900 et 2023." . EOL;
+    // Donne une valeur à la variable en demandant a l'utilisateur 
     $annee = readline("Veuillez resaisir une année de naissance ? ");
+    // Donne une valeur à la variable avec une soustraction
     $age = 2023 - $annee;
+    // AFFICHE
     echo "Vous avez " . $age . " ans." . EOL;
-
+    // SI l'age est inf à 10 ALORS
     if ($age < 10) {
+        // AFFICHE
         echo "Vous êtes encore très jeune !" . EOL;
+    // SINON SI l'age est sup à 100 ALORS
     } elseif ($age > 100) {
+        //AFFICHE
         echo "Vous êtes centenaire !" . EOL;
+    // SINON
     } else {
+        //AFFICHE
         echo "Vous êtes éligible à notre programme." .EOL;
+    // FIN SI
     }
+// FIN TANT QUE
 }
-
-
-
-// // SI (annee < 1900 OU annee > 2023) ALORS 
-// //      AFFICHER "Veuillez saisir une année entre 1900 et 2023."
-// // SINON
-// //(Créer) ENTIER age = 2023 - année;         
-//         //AFFICHER "Vous avez " . age . " ans."
-// // FIN SI
-// }
-
 
 //     // 2 - DIVISION
 // // Demandez deux nombres a et b à l'utilisateur
 // // Affichez le résultat de la division de a par b (attention au piège) 
 
-// // ENTIER a = DEMANDER "Saisissez un nombre : "
-// // ENTIER b = DEMANDER "Saisissez un autre nombre : "
+// // ENTIER a = DEMANDER à l'utilsateur
+// // ENTIER b = DEMANDER à l'utilsateur
 $a = readline ('Saisissez un nombre : ');
 $b = readline ('Saisissez un autre nombre : ');
+// SI la valeur de b est égale a 0 ALORS
 if ($b == 0){
+    // AFFICHE
     echo 'Division par zéro impossible.';
-} else {
-    $result = $a/$b;
-    echo "$a/$b est égale à $result" . EOL;
-}
-// // SI ( b = 0 ) ALORS
-    // AFFICHER "Division par zéro impossible."
 // SINON
-    // ENTIER resultat = a/b;
-    // AFFICHER "a / b = resultat";
+} else {
+    // ENTIER = valeur de 'A' DIVISE la valeur de 'B'
+    $result = $a/$b;
+    // AFFICHE
+    echo "$a/$b est égale à $result" . EOL;
 // FIN SI
+}
 
 // 3 - TROUVEZ PI
 // Demandez à l'utilisateur de taper la valeur de PI 
@@ -71,49 +72,50 @@ if ($b == 0){
 // DECIMAL pi
 // DECIMAL m_pi
 
+// FLOAT demander à l'utilisateur
 $pi = readline( 'Veuillez saisir la valeur de PI :');
+// ARRONDIE le FLOAT à 2 DÉCIMAL 
 $pi = round($pi , 2);
+// VALEUR exacte de PI ARRONDI à 2 DECIMAL
 $m_pi = round(M_PI, 2);
+// SI la valeur entré par l'utilisateur est égal à la valeur de pi de référence ALORS
 if ($pi == $m_pi ) {
+    // AFFICHE
     echo 'Bravo !' . EOL;
+// SINON
 } else {
+    //AFFICHE
     echo 'Non valide ! ' . EOL;
+// FIN SI
 }
 
-// pi = DEMANDER "Veuillez saisir la valeur de PI : "
-// pi = ARRONDIR pi A 2 DECIMAL
-// m_pi = ARRONDIR M_PI A 2 DECIMAL
-// SI (vérification) pi = m_pi ALORS
-    // AFFICHER "Bravo !"
 
 // 4 - ÉTAT DE L'EAU
 // Demandez à l'utilisateur de saisir une température
 // Lui dire si, à cette température, l'eau est à l'état solide, liquide, ou gazeux
 
-// ENTIER temp = DEMANDER "Veuillez saisir une température en degrès."
-// SI (temps <= 0) ALORS
-    // AFFICHER "A 'temps°C' l'eau est sous forme de glace"
-// SINON SI (temp >= 100 ) ALORS
-    // AFFICHER "A 'temps°C' l'eau est sous forme gazeux"
-// SINON 
-    // AFFICHER "A 'temps°C' l'eau est liquide"
-// FIN SI
-
+// ENTIER temp = DEMANDER à l'utilisateur d'entré un ENTIER
 $temp = readline( 'Veuillez saisir une température en degrès ?');
-    if ($temp <= 0) {
-        echo 'À ' . $temp . ' degrès l\'eau est sous forme de glace.' . EOL;
-    } else if ($temp >= 100){
-        echo 'À ' . $temp . ' degrès l\'eau est sous forme de gaz.' . EOL;
-    } else {
-        echo 'À ' . $temp . ' degrès l\'eau est sous forme liquide.' . EOL;
-    }
+// SI ENTIER est inf ou égale à 0 ALORS   
+if ($temp <= 0) {
+    // AFFICHER
+    echo 'À ' . $temp . ' degrès l\'eau est sous forme de glace.' . EOL;
+// SINON SI ENTIER est sup ou égal à 100 ALORS
+} else if ($temp >= 100){
+    // AFFICHE
+    echo 'À ' . $temp . ' degrès l\'eau est sous forme de gaz.' . EOL;
+// SINON
+} else {
+    // AFFICHE
+    echo 'À ' . $temp . ' degrès l\'eau est sous forme liquide.' . EOL;
+// FIN SI
+}
 
 // 5 - DIVISIBLE PAR 3 ET/OU 5 ?
 // Demandez un nombre à l'utilisateur.
 // Lui dire si ce nombre est divisible par 5 et/ou par 3
-// Note : souvenez-vous de l'opérateur %
 
-// ENTIER nom = DEMANDER "Veuillez saisir un numbre : "
+// ENTIER nom = DEMANDER à l'utilisateur d'entrer un ENTIER
 $nom = readline('Veuillez saisir un nombre : ');
 // SI (nombre%5 = 0 ET nombre%3 = 0) ALORS
 if ($nom%3 == 0 && $nom%5 == 0) {;
@@ -137,10 +139,8 @@ if ($nom%3 == 0 && $nom%5 == 0) {;
 // 6 - CONSONNE OU VOYELLE ?
 // Demandez à l'utilisateur de saisir une lettre,
 // puis, lui dire si c'est une voyelle ou une consonne
-// Peut-être pourriez-vous utiliser toLowerCase() ou toUpperCase()
 
-// Solution 1
-// STRING lettre = DEMANDER "Saisissez une lettre :"
+// STRING lettre = DEMANDER à l'utilsateur
 $lettre = readline('Saisissez une lettre :');
 // lettre = MAJUSCULE (lettre)
 $lettre = strtoupper($lettre);
@@ -168,23 +168,3 @@ default :
     break ;
     // FIN SELON
 }
-
-
-
-
- 
-        
-       
-       
-   
-       
-// OU 
-// Solution 2 ( A PRIVILLEGIER )
-// TABLEAU voyelle =  ['A','E','I,'O','U','Y']
-// STRING lettre = DEMANDER "Saisissez une lettre"
-// lettre = MAJUSCULE (lettre)
-// SI (}) (lettre n'est pas dans le TABLEAU voyelles) ALORS
-// AFFICHER "lettre est une consonne"
-// SINON 
-// AFFICHER "lettre est une voyelle"
-//FIN SI ({)

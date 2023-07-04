@@ -68,17 +68,20 @@ do {
     $combination = checkCombination($dé);
 
     // J'affiche le résultat
-    //SI la variable est vide 
+    //SI la variable n'est pas vide 
     if (!empty($combination)) {
+        // j'affiche
         echo "CHOUETTE !!! C'est une $combination !\n";
+    // SINON
     } else {
+        // J'affiche
         echo "Pas de combinaison trouvée.\n";
     }
 
     // Demander au joueur s'il veut relancer les dés
     echo "Voulez-vous relancer les dés ? (Oui/Non) : ";
     $choice = strtolower(trim(readline()));
-
+// TANT QUE
 } while ($choice === "oui");
 
   
