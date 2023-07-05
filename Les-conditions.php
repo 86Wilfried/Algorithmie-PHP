@@ -50,7 +50,7 @@ $a = readline ('Saisissez un nombre : ');
 $b = readline ('Saisissez un autre nombre : ');
 // SI la valeur de b est égale a 0 ALORS
 if ($b == 0){
-    // AFFICHE
+    // AFFICHe
     echo 'Division par zéro impossible.';
 // SINON
 } else {
